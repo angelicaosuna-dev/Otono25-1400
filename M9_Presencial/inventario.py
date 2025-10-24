@@ -31,6 +31,8 @@ def agregar_producto(nombre, precio, stock):
     # el diccionario 'inventario' con el nombre del producto como CLAVE.
     
     # [código va aquí]
+    nueva_tupla = (precio, stock)
+    inventario[nombre] = nueva_tupla
     
     print(f"\n✅ Producto '{nombre}' agregado/actualizado.")
 
@@ -42,8 +44,13 @@ def buscar_precio(nombre):
     # (el primer elemento) y lo retorna. Si no existe, retorna None.
     
     # [Tu código va aquí]
-    
-    pass # Reemplaza esta línea
+    if nombre in inventario:
+        precio, _ = inventario[nombre]
+        return precio
+    else:
+        return None
+
+     # Reemplaza esta línea
 
 def valor_total_inventario():
     """Calcula el valor monetario total de todos los productos en stock."""
@@ -54,7 +61,8 @@ def valor_total_inventario():
         # Multiplica el precio por el stock y suma el resultado a 'valor_total'.
         
         # [Tu código va aquí]
-        
+        precio, stock = detalles
+        valor_total += precio * stock
     return valor_total
 
 # --- Pruebas del Programa ---
