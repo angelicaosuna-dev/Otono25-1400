@@ -23,7 +23,12 @@ def duplicados(seq):
     duplicados('llama') -> True  #si tiene letras duplicadas
     """
     # TODO: Termina la funcion
-    pass
+    palabra = set()
+    for letra in seq:
+        if letra in palabra:
+            return True
+        palabra.add(letra)
+    return False 
 
 
 # ============================
@@ -42,8 +47,13 @@ def encontrar_repeticiones(counter):
     encontrar_repeticiones({'a': 2, 'b': 1, 'c': 3}) -> ['a', 'c']
     """
     # TODO: Termina la funcion
-    return []
+    
+    repeticiones = []
+    for key, value in counter.items():
+        if value > 1:
+            repeticiones.append(key)    
 
+    return repeticiones
 
 # ============================
 # TAREA 3: sumando_counters
@@ -63,7 +73,13 @@ def suma_counters(dict1, dict2):
     sumando_counters(dict1, dict2) -> {'a': 3, 'b': 1, 'c': 4}
     """
     # TODO: Termina la funcion
-    pass
+    counter1 = dict1.copy()
+    for key, value in dict2.items():
+        if key in counter1:
+            counter1[key] += value
+        else:
+            counter1[key] = value
+    return counter1
 
 
 # ============================
