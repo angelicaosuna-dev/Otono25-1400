@@ -4,11 +4,11 @@
 import pytest
 
 try:
-    from M10_Presencial.m10_rectangulo_eq_ej1 import Rectangulo
+    from m10_rectangulo_eq_ej1 import Rectangulo
 
 except ImportError:
     pytest.fail(
-        "No se pudo importar la clase 'Rectangulo' del archivo 'student_code_m13_ex1.py'.")
+        "No se pudo importar la clase 'Rectangulo' del archivo 'student_code_m10_ex1.py'.")
 
 
 def test_equivalencia_objetos_iguales():

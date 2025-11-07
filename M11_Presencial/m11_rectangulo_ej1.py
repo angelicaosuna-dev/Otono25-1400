@@ -24,6 +24,8 @@ class Rectangulo:
 
     # TODO: Paso 1. Completa el método de inicialización.
     def __init__(self, ancho, alto):
+        self.ancho = ancho
+        self.alto =alto
         """
         Inicializa un nuevo objeto Rectangulo.
 
@@ -46,7 +48,7 @@ class Rectangulo:
         """
         # El área es el producto del ancho y el alto del objeto.
         # return self.ancho * ...
-        return 0  # Reemplaza esto con tu cálculo
+        return self.ancho * self.alto  # Reemplaza esto con tu cálculo
 
 
 # --- Bloque para probar tu clase ---
@@ -59,3 +61,7 @@ if __name__ == "__main__":
 
     print(f"El área del rectángulo es: {area}")
 # --- Fin del bloque de prueba ---
+
+# exposicion de Tiia sahrakorpi hablo sobre el que hacer con la basura como se recicla en otros paises y 
+# lo que hicieron mal en 1986 en filadelfia, y como los paises ricos se aprobecharon 
+# de los mas pobres y les mandaron basura toxica.
