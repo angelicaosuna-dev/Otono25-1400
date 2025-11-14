@@ -1,3 +1,4 @@
+
 """Juntos: w = write/escribir o escribir, r = read/leer, A = appenda/anadir.
 1. Reemplazar 'Megan,38,desayuno' con su nombre, edad, y su preferencia entre desayuno almuerzo, o cena.
 2. Correr este codigo en su maquina local (que no tenga errores)
@@ -5,14 +6,14 @@
 """
 
 # w Funcion para escribir en el archivo
-#def escribirDocumento(data):
-#    with open("salida.txt", "w", encoding="utf-8") as fileToWriteTo:
-#        fileToWriteTo.write(data + "\n")
+def escribirDocumento(data):
+    with open("salida.txt", "w", encoding="utf-8") as fileToWriteTo:
+        fileToWriteTo.write(data + "\n")
 
 
 # TODO 1:
 # Reemplazar 'Megan,38,desayuno' con su nombre, edad, y su preferencia entre desayuno almuerzo, o cena.
-#miEntrada = 'Megan,38,desayuno'
+miEntrada = 'Angelica,32,cena'
 #escribirDocumento(miEntrada)
 
 # TODO 2:
