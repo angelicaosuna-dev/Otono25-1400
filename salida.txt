@@ -1,0 +1,5 @@
+Angelica,32,cena
+Angelica,21,almuerzo
+Companero1,25,desayuno
+Companero2,30,almuerzo
+Companero3,28,cena

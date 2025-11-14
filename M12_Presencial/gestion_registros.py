@@ -6,23 +6,28 @@
 """
 
 # w Funcion para escribir en el archivo
-def escribirDocumento(data):
+"""def escribirDocumento(data):
     with open("salida.txt", "w", encoding="utf-8") as fileToWriteTo:
         fileToWriteTo.write(data + "\n")
 
 
 # TODO 1:
 # Reemplazar 'Megan,38,desayuno' con su nombre, edad, y su preferencia entre desayuno almuerzo, o cena.
-miEntrada = 'Angelica,32,cena'
+"""#miEntrada = 'Angelica,32,cena'
 #escribirDocumento(miEntrada)
+"""
 
 # TODO 2:
 # a Despues de verificar el documento salida.txt, agregar 3 lineas con datos de companeros. 
-"""def agregarAlDocumento(data):
-    with open("salida.txt", "a") as fileToWriteTo:
-        fileToWriteTo.write(data + "\n") 
-
-#agregarAlDocumento("Angelica,21,almuerzo")"""
+"""#def agregarAlDocumento(data):
+    #with open("salida.txt", "a") as fileToWriteTo:
+       # fileToWriteTo.write(data + "\n") 
+"""
+agregarAlDocumento("Angelica,21,almuerzo")
+agregarAlDocumento("Companero1,25,desayuno")
+agregarAlDocumento("Companero2,30,almuerzo")
+agregarAlDocumento("Companero3,28,cena")
+"""
 
 # TODO 3: 
 # r 
@@ -30,4 +35,11 @@ miEntrada = 'Angelica,32,cena'
 def leerDocumento():
     with open("salida.txt", "r") as fileToReadFrom:
         contenido = fileToReadFrom.read()
-        print(contenido)"""
+        print(contenido)
+leerDocumento()
+"""
+import csv
+with open("M12_Presencial/informacion.csv", "r", encoding="utf-8") as f:
+    lector = csv.DictReader(f)
+    for linea in lector:
+        print(linea ["cantante"])
