@@ -44,8 +44,14 @@ class Rectangulo:
         if not isinstance(otro, Rectangulo):
             return False
 
+
         # TODO: Paso 2. Compara los atributos y devuelve el resultado.
+<<<<<<< HEAD
         return self.ancho == otro.ancho and self.alto == otro.alto
+=======
+        
+
+>>>>>>> 9598e239894168af3ecca2350313d2a4a102dfc1
 
 # --- Bloque para probar tu clase ---
 if __name__ == "__main__":
