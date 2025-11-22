@@ -34,24 +34,29 @@ def promedio_de_archivo(nombre_archivo):
     # TODO: Paso 1. Inicia un bloque try para manejar errores.
     try:
         # TODO: Paso 2. Abre el archivo en modo lectura ('r').
-        # with open(...) as archivo:
+        with open(nombre_archivo) as archivo: # with open(...) as archivo:
         # TODO: Paso 3. Lee todas las líneas del archivo.
-        # lineas = archivo.readlines()
+            lineas = archivo.readlines() # lineas = archivo.readlines()
 
         puntajes = []
         # TODO: Paso 4. Itera sobre cada línea, conviértela a entero
         # y añádela a la lista `puntajes`.
         # for linea in lineas:
         #     puntajes.append(int(linea.strip()))
+        for linea in lineas:
+            puntajes.append(int(linea.strip()))
 
         # TODO: Paso 5. Si la lista de puntajes está vacía, devuelve 0.0.
         # if not puntajes:
         #     return 0.0
+        if not puntajes:
+            return 0.0
 
         # TODO: Paso 6. Calcula la suma y el promedio.
         # promedio = sum(puntajes) / len(puntajes)
         # return promedio
-        pass  # Borra este pass
+        promedio = sum(puntajes) / len(puntajes)  # Borra este pass
+        return promedio
 
     # TODO: Paso 7. Captura la excepción si el archivo no se encuentra.
     except FileNotFoundError:
@@ -92,6 +97,10 @@ if __name__ == "__main__":
 en lugar de simplemente archivo = open(...)? ¿Qué acción de "limpieza" o
 manejo de recursos realiza esta estructura automáticamente, incluso si ocurre
 un error dentro del bloque try?
+Respuesta: El uso de with open(...) as archivo: garantiza que el archivo se cierre
+automaticamente al salir del bloque incluso si ocurre una excepcion.
+Previene fugas de recursos y asegura que otros procesos puedan acceder al archivo.
+
 
 2. Manejo de Errores Específicos vs. Generales:
 En el código, estamos capturando FileNotFoundError y ValueError por separado.
@@ -99,10 +108,15 @@ En el código, estamos capturando FileNotFoundError y ValueError por separado.
 en lugar de usar un except genérico (como except Exception:)? Explica cómo el
 lugar donde ocurre cada uno de esos dos errores impacta la ejecución del
 programa.
+Respuesta: El except generico solo devuelve un mensaje de error indefinido.
+FileNotFoundError sucede cuando el archivo no existe al tratar de abrirlo y
+ValueError sucede al convertir una linea no numerica a numero entero.
+
 
 3. Lógica Condicional y Evitar Fallos:
 La línea if not puntajes: return 0.0 es crucial después de la lectura del
 Archivo. ¿Qué tipo de error exacto de Python (por ejemplo, IndexError,
 TypeError, etc.) ocurriría en la línea promedio = suma_puntajes / len(puntajes)
 si esta verificación se eliminara y el archivo de entrada estuviera vacío?
+Respuesta: ZeroDivisionError que ocurro al dividir por cero cuando la lista esta vacia.
 """
